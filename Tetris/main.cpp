@@ -1,6 +1,8 @@
 #include <glew.h>
 #include <SDL.h>
 
+#include "board.h"
+
 int main(int argc, char ** argv)
 {
   SDL_Init(SDL_INIT_VIDEO);
@@ -17,9 +19,10 @@ int main(int argc, char ** argv)
   SDL_GL_CreateContext(window);
   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
   glClear(GL_COLOR_BUFFER_BIT);
-  SDL_GL_SwapWindow(window);
 
-  bool running = true; 
+  Board board;
+
+  bool running = true;
   while (running) {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
@@ -32,6 +35,9 @@ int main(int argc, char ** argv)
           }
       }
     }
+
+    board.draw();
+    SDL_GL_SwapWindow(window);
   }
 
   SDL_DestroyWindow(window);
