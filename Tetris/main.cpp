@@ -20,6 +20,10 @@ int main(int argc, char ** argv)
   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
   glClear(GL_COLOR_BUFFER_BIT);
 
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+  glOrtho(-2.0f, 24.0f, -2.0f, 22.0f, 0.0f, 1.0f);
+
   Board board;
 
   bool running = true;
