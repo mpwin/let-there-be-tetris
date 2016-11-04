@@ -2,6 +2,7 @@
 #include <SDL.h>
 
 #include "board.h"
+#include "tetromino.h"
 
 int main(int argc, char ** argv)
 {

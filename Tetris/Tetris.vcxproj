@@ -119,10 +119,12 @@
   <ItemGroup>
     <ClCompile Include="board.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="tetromino.cpp" />
     <ClCompile Include="tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h" />
+    <ClInclude Include="tetromino.h" />
     <ClInclude Include="tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
