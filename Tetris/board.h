@@ -4,14 +4,14 @@
 #include "tile.h"
 
 class Board {
-  public:
-    Board();
-    void draw();
+public:
+  Board();
+  void draw();
 
-  private:
-    int width;
-    int height;
-    Tile **tiles;
+private:
+  int width;
+  int height;
+  Tile **tiles;
 };
 
 #endif
