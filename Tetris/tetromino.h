@@ -20,6 +20,7 @@ private:
   void set_shape_2();
   void set_shape_3();
   void set_shape_4();
+  void set_tiles_shape();
 };
 
 class L : public Tetromino {
@@ -31,6 +32,7 @@ private:
   void set_shape_2();
   void set_shape_3();
   void set_shape_4();
+  void set_tiles_shape();
 };
 
 class O : public Tetromino {
@@ -42,6 +44,7 @@ private:
   void set_shape_2();
   void set_shape_3();
   void set_shape_4();
+  void set_tiles_shape();
 };
 
 class T : public Tetromino {
@@ -53,6 +56,7 @@ private:
   void set_shape_2();
   void set_shape_3();
   void set_shape_4();
+  void set_tiles_shape();
 };
 
 class Z : public Tetromino {
@@ -64,6 +68,7 @@ private:
   void set_shape_2();
   void set_shape_3();
   void set_shape_4();
+  void set_tiles_shape();
 };
 
 #endif

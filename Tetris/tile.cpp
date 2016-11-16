@@ -24,3 +24,7 @@ void Tile::set_position(int xc, int yc) {
   x = xc;
   y = yc;
 }
+
+void Tile::set_state(int s) {
+  state = s;
+}

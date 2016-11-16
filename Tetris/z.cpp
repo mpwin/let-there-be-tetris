@@ -12,6 +12,7 @@ Z::Z() {
   set_shape_4();
 
   instantiate_tiles();
+  set_tiles_shape();
 }
 
 void Z::instantiate_tiles() {
@@ -62,5 +63,23 @@ void Z::set_shape_4() {
   shape_4 = new int[size];
   for (int i = 0; i < size; i++) {
     shape_4[i] = shape[i];
+  }
+}
+
+void Z::set_tiles_shape() {
+  int *shape;
+
+  switch (state) {
+    case 1: shape = shape_1;
+    case 2: shape = shape_2;
+    case 3: shape = shape_3;
+    case 4: shape = shape_4;
+  }
+
+  for (int i = 0; i < size ^ 2; i++) {
+    int row = i / size;
+    int col = i % size;
+
+    tiles[row][col].set_state(shape[i]);
   }
 }

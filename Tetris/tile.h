@@ -6,6 +6,7 @@ public:
   Tile();
   void draw();
   void set_position(int x, int y);
+  void set_state(int state);
 
 private:
   int x, y;
