@@ -19,12 +19,6 @@ void Z::instantiate_tiles() {
   for (int i = 0; i < size; i++) {
     tiles[i] = new Tile[size];
   }
-
-  for (int i = 0; i < size; i++) {
-    for (int j = 0; j < size; j++) {
-      tiles[i][j].set_position(i, j);
-    }
-  }
 }
 
 void Z::set_shape_1() {
