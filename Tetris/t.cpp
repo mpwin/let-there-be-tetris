@@ -10,6 +10,21 @@ T::T() {
   set_shape_2();
   set_shape_3();
   set_shape_4();
+
+  instantiate_tiles();
+}
+
+void T::instantiate_tiles() {
+  tiles = new Tile*[size];
+  for (int i = 0; i < size; i++) {
+    tiles[i] = new Tile[size];
+  }
+
+  for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size; j++) {
+      tiles[i][j].set_position(i, j);
+    }
+  }
 }
 
 void T::set_shape_1() {
