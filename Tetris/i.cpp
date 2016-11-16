@@ -59,11 +59,3 @@ void I::set_shape_4() {
     shape_4[i] = shape[i];
   }
 }
-
-L::L() {}
-
-O::O() {}
-
-T::T() {}
-
-Z::Z() {}
