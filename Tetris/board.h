@@ -9,8 +9,7 @@ public:
   void draw();
 
 private:
-  int width;
-  int height;
+  int width, height;
   Tile **tiles;
 };
 
