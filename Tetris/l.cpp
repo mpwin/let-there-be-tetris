@@ -70,13 +70,14 @@ void L::set_tiles_shape() {
   int *shape;
 
   switch (state) {
-    case 1: shape = shape_1;
-    case 2: shape = shape_2;
-    case 3: shape = shape_3;
-    case 4: shape = shape_4;
+    case 1  : shape = shape_1;
+    case 2  : shape = shape_2;
+    case 3  : shape = shape_3;
+    case 4  : shape = shape_4;
+    default : return;
   }
 
-  for (int i = 0; i < size ^ 2; i++) {
+  for (int i = 0; i < (size ^ 2); i++) {
     int row = i / size;
     int col = i % size;
 
