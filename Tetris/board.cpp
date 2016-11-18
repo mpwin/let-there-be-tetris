@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <glew.h>
 
 #include "board.h"
@@ -31,5 +32,16 @@ void Board::draw() {
     for (int j = 0; j < height; j++) {
       tiles[i][j].draw();
     }
+  }
+}
+
+void Board::instantiate_tetromino() {
+  switch (rand() % 5) {
+    case 0: tetromino = new I();
+    case 1: tetromino = new L();
+    case 2: tetromino = new O();
+    case 3: tetromino = new T();
+    case 4: tetromino = new Z();
+    default: return;
   }
 }
