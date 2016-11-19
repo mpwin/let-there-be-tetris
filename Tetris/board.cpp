@@ -1,6 +1,3 @@
-#include <cstdlib>
-#include <glew.h>
-
 #include "board.h"
 
 Board::Board()

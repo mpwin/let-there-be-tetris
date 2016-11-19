@@ -1,6 +1,8 @@
 #ifndef TETROMINO_H
 #define TETROMINO_H
 
+#include <cstdlib>
+
 #include "tile.h"
 
 class Tetromino

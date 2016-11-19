@@ -1,5 +1,3 @@
-#include <cstdlib>
-
 #include "tetromino.h"
 
 O::O(int board_width, int board_height)

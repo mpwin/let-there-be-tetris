@@ -1,6 +1,9 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include <cstdlib>
+#include <glew.h>
+
 #include "tetromino.h"
 #include "tile.h"
 
