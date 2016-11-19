@@ -37,11 +37,11 @@ void Board::draw() {
 
 void Board::instantiate_tetromino() {
   switch (rand() % 5) {
-    case 0: tetromino = new I();
-    case 1: tetromino = new L();
-    case 2: tetromino = new O();
-    case 3: tetromino = new T();
-    case 4: tetromino = new Z();
+    case 0: tetromino = new I(width, height);
+    case 1: tetromino = new L(width, height);
+    case 2: tetromino = new O(width, height);
+    case 3: tetromino = new T(width, height);
+    case 4: tetromino = new Z(width, height);
     default: return;
   }
 }

@@ -2,7 +2,7 @@
 
 #include "tetromino.h"
 
-O::O() {
+O::O(int board_width, int board_height) {
   size = 2;
   state = rand() % 4 + 1;
 
@@ -13,6 +13,7 @@ O::O() {
 
   instantiate_tiles();
   set_tiles_shape();
+  set_tiles_initial_position(board_width, board_height);
 }
 
 void O::instantiate_tiles() {
@@ -59,6 +60,18 @@ void O::set_shape_4() {
   shape_4 = new int[size];
   for (int i = 0; i < size; i++) {
     shape_4[i] = shape[i];
+  }
+}
+
+void O::set_tiles_initial_position(int board_width, int board_height) {
+  int initial_x = (board_width / 2) - (size / 2);
+  int initial_y = board_height;
+
+  for (int i = 0; i < (size ^ 2); i++) {
+    int row = i / size;
+    int col = i % size;
+
+    tiles[row][col].set_position(initial_x + col, initial_y - row);
   }
 }
 
