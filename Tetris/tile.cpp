@@ -4,12 +4,15 @@
 
 #include "tile.h"
 
-Tile::Tile() {
+Tile::Tile()
+{
   state = rand() % 2;
 }
 
-void Tile::draw() {
-  if (state == 1) {
+void Tile::draw()
+{
+  if (state == 1)
+  {
     glBegin(GL_QUADS);
       glColor3f(0.0f, 1.0f, 1.0f);
       glVertex2f(x, y);
@@ -20,11 +23,13 @@ void Tile::draw() {
   }
 }
 
-void Tile::set_position(int xc, int yc) {
+void Tile::set_position(int xc, int yc)
+{
   x = xc;
   y = yc;
 }
 
-void Tile::set_state(int s) {
+void Tile::set_state(int s)
+{
   state = s;
 }

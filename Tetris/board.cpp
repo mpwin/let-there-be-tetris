@@ -3,7 +3,8 @@
 
 #include "board.h"
 
-Board::Board() {
+Board::Board()
+{
   width  = 10;
   height = 20;
 
@@ -19,7 +20,8 @@ Board::Board() {
   }
 }
 
-void Board::draw() {
+void Board::draw()
+{
   glBegin(GL_LINE_LOOP);
     glColor3f(1.0f, 1.0f, 1.0f);
     glVertex2f(0.0f, 0.0f);
@@ -35,8 +37,10 @@ void Board::draw() {
   }
 }
 
-void Board::instantiate_tetromino() {
-  switch (rand() % 5) {
+void Board::instantiate_tetromino()
+{
+  switch (rand() % 5)
+  {
     case 0: tetromino = new I(width, height);
     case 1: tetromino = new L(width, height);
     case 2: tetromino = new O(width, height);

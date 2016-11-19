@@ -2,7 +2,8 @@
 
 #include "tetromino.h"
 
-L::L(int board_width, int board_height) {
+L::L(int board_width, int board_height)
+{
   size = 3;
   state = rand() % 4 + 1;
 
@@ -16,14 +17,16 @@ L::L(int board_width, int board_height) {
   set_tiles_initial_position(board_width, board_height);
 }
 
-void L::instantiate_tiles() {
+void L::instantiate_tiles()
+{
   tiles = new Tile*[size];
   for (int i = 0; i < size; i++) {
     tiles[i] = new Tile[size];
   }
 }
 
-void L::set_shape_1() {
+void L::set_shape_1()
+{
   int shape[] = { 0, 1, 0,
                   0, 1, 0,
                   0, 1, 1 };
@@ -34,7 +37,8 @@ void L::set_shape_1() {
   }
 }
 
-void L::set_shape_2() {
+void L::set_shape_2()
+{
   int shape[] = { 0, 0, 0,
                   1, 1, 1,
                   1, 0, 0 };
@@ -45,7 +49,8 @@ void L::set_shape_2() {
   }
 }
 
-void L::set_shape_3() {
+void L::set_shape_3()
+{
   int shape[] = { 1, 1, 0,
                   0, 1, 0,
                   0, 1, 0 };
@@ -56,7 +61,8 @@ void L::set_shape_3() {
   }
 }
 
-void L::set_shape_4() {
+void L::set_shape_4()
+{
   int shape[] = { 0, 0, 1,
                   1, 1, 1,
                   0, 0, 0 };
@@ -67,11 +73,13 @@ void L::set_shape_4() {
   }
 }
 
-void L::set_tiles_initial_position(int board_width, int board_height) {
+void L::set_tiles_initial_position(int board_width, int board_height)
+{
   int initial_x = (board_width / 2) - (size / 2);
   int initial_y = board_height;
 
-  for (int i = 0; i < (size ^ 2); i++) {
+  for (int i = 0; i < (size ^ 2); i++)
+  {
     int row = i / size;
     int col = i % size;
 
@@ -79,10 +87,12 @@ void L::set_tiles_initial_position(int board_width, int board_height) {
   }
 }
 
-void L::set_tiles_shape() {
+void L::set_tiles_shape()
+{
   int *shape;
 
-  switch (state) {
+  switch (state)
+  {
     case 1  : shape = shape_1;
     case 2  : shape = shape_2;
     case 3  : shape = shape_3;
@@ -90,7 +100,8 @@ void L::set_tiles_shape() {
     default : return;
   }
 
-  for (int i = 0; i < (size ^ 2); i++) {
+  for (int i = 0; i < (size ^ 2); i++)
+  {
     int row = i / size;
     int col = i % size;
 

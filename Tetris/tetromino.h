@@ -3,7 +3,8 @@
 
 #include "tile.h"
 
-class Tetromino {
+class Tetromino
+{
 protected:
   int size;
   int state;
@@ -11,7 +12,8 @@ protected:
   Tile **tiles;
 };
 
-class I : public Tetromino {
+class I : public Tetromino
+{
 public:
   I(int board_width, int board_height);
 private:
@@ -24,7 +26,8 @@ private:
   void set_tiles_shape();
 };
 
-class L : public Tetromino {
+class L : public Tetromino
+{
 public:
   L(int board_width, int board_height);
 private:
@@ -37,7 +40,8 @@ private:
   void set_tiles_shape();
 };
 
-class O : public Tetromino {
+class O : public Tetromino
+{
 public:
   O(int board_width, int board_height);
 private:
@@ -50,7 +54,8 @@ private:
   void set_tiles_shape();
 };
 
-class T : public Tetromino {
+class T : public Tetromino
+{
 public:
   T(int board_width, int board_height);
 private:
@@ -63,7 +68,8 @@ private:
   void set_tiles_shape();
 };
 
-class Z : public Tetromino {
+class Z : public Tetromino
+{
 public:
   Z(int board_width, int board_height);
 private:

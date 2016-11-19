@@ -2,7 +2,8 @@
 
 #include "tetromino.h"
 
-O::O(int board_width, int board_height) {
+O::O(int board_width, int board_height)
+{
   size = 2;
   state = rand() % 4 + 1;
 
@@ -16,14 +17,16 @@ O::O(int board_width, int board_height) {
   set_tiles_initial_position(board_width, board_height);
 }
 
-void O::instantiate_tiles() {
+void O::instantiate_tiles()
+{
   tiles = new Tile*[size];
   for (int i = 0; i < size; i++) {
     tiles[i] = new Tile[size];
   }
 }
 
-void O::set_shape_1() {
+void O::set_shape_1()
+{
   int shape[] = { 1, 1,
                   1, 1 };
 
@@ -33,7 +36,8 @@ void O::set_shape_1() {
   }
 }
 
-void O::set_shape_2() {
+void O::set_shape_2()
+{
   int shape[] = { 1, 1,
                   1, 1 };
 
@@ -43,7 +47,8 @@ void O::set_shape_2() {
   }
 }
 
-void O::set_shape_3() {
+void O::set_shape_3()
+{
   int shape[] = { 1, 1,
                   1, 1 };
 
@@ -53,7 +58,8 @@ void O::set_shape_3() {
   }
 }
 
-void O::set_shape_4() {
+void O::set_shape_4()
+{
   int shape[] = { 1, 1,
                   1, 1 };
 
@@ -63,11 +69,13 @@ void O::set_shape_4() {
   }
 }
 
-void O::set_tiles_initial_position(int board_width, int board_height) {
+void O::set_tiles_initial_position(int board_width, int board_height)
+{
   int initial_x = (board_width / 2) - (size / 2);
   int initial_y = board_height;
 
-  for (int i = 0; i < (size ^ 2); i++) {
+  for (int i = 0; i < (size ^ 2); i++)
+  {
     int row = i / size;
     int col = i % size;
 
@@ -75,10 +83,12 @@ void O::set_tiles_initial_position(int board_width, int board_height) {
   }
 }
 
-void O::set_tiles_shape() {
+void O::set_tiles_shape()
+{
   int *shape;
 
-  switch (state) {
+  switch (state)
+  {
     case 1  : shape = shape_1;
     case 2  : shape = shape_2;
     case 3  : shape = shape_3;
@@ -86,7 +96,8 @@ void O::set_tiles_shape() {
     default : return;
   }
 
-  for (int i = 0; i < (size ^ 2); i++) {
+  for (int i = 0; i < (size ^ 2); i++)
+  {
     int row = i / size;
     int col = i % size;
 

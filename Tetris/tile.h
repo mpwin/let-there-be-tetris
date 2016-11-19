@@ -1,7 +1,8 @@
 #ifndef TILE_H
 #define TILE_H
 
-class Tile {
+class Tile
+{
 public:
   Tile();
   void draw();

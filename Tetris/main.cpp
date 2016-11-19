@@ -28,12 +28,16 @@ int main(int argc, char ** argv)
   Board board;
 
   bool running = true;
-  while (running) {
+  while (running)
+  {
     SDL_Event event;
-    while (SDL_PollEvent(&event)) {
-      switch (event.type) {
+    while (SDL_PollEvent(&event))
+    {
+      switch (event.type)
+      {
         case SDL_KEYDOWN:
-          switch (event.key.keysym.sym) {
+          switch (event.key.keysym.sym)
+          {
             case SDLK_ESCAPE:
               running = false;
               break;

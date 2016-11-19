@@ -4,7 +4,8 @@
 #include "tetromino.h"
 #include "tile.h"
 
-class Board {
+class Board
+{
 public:
   Board();
   void draw();
