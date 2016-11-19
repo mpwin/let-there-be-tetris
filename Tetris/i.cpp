@@ -2,7 +2,10 @@
 
 I::I(int board_width, int board_height)
 {
-  size = 4;
+  width  = 4;
+  height = 4;
+  area   = width * height;
+
   state = rand() % 4 + 1;
 
   set_shape_1();
@@ -17,9 +20,9 @@ I::I(int board_width, int board_height)
 
 void I::instantiate_tiles()
 {
-  tiles = new Tile*[size];
-  for (int i = 0; i < size; i++) {
-    tiles[i] = new Tile[size];
+  tiles = new Tile*[width];
+  for (int i = 0; i < width; i++) {
+    tiles[i] = new Tile[height];
   }
 }
 
@@ -30,8 +33,8 @@ void I::set_shape_1()
                   0, 1, 0, 0,
                   0, 1, 0, 0 };
 
-  shape_1 = new int[size];
-  for (int i = 0; i < size; i++) {
+  shape_1 = new int[area];
+  for (int i = 0; i < area; i++) {
     shape_1[i] = shape[i];
   }
 }
@@ -43,8 +46,8 @@ void I::set_shape_2()
                   0, 0, 0, 0,
                   0, 0, 0, 0 };
 
-  shape_2 = new int[size];
-  for (int i = 0; i < size; i++) {
+  shape_2 = new int[area];
+  for (int i = 0; i < area; i++) {
     shape_2[i] = shape[i];
   }
 }
@@ -56,8 +59,8 @@ void I::set_shape_3()
                   0, 0, 1, 0,
                   0, 0, 1, 0 };
 
-  shape_3 = new int[size];
-  for (int i = 0; i < size; i++) {
+  shape_3 = new int[area];
+  for (int i = 0; i < area; i++) {
     shape_3[i] = shape[i];
   }
 }
@@ -69,21 +72,21 @@ void I::set_shape_4()
                   1, 1, 1, 1,
                   0, 0, 0, 0 };
 
-  shape_4 = new int[size];
-  for (int i = 0; i < size; i++) {
+  shape_4 = new int[area];
+  for (int i = 0; i < area; i++) {
     shape_4[i] = shape[i];
   }
 }
 
 void I::set_tiles_initial_position(int board_width, int board_height)
 {
-  int initial_x = (board_width / 2) - (size / 2);
-  int initial_y = board_height;
+  int initial_x = (board_width / 2) - (width / 2);
+  int initial_y = board_height - 1;
 
-  for (int i = 0; i < (size ^ 2); i++)
+  for (int i = 0; i < area; i++)
   {
-    int row = i / size;
-    int col = i % size;
+    int row = i / width;
+    int col = i % height;
 
     tiles[row][col].set_position(initial_x + col, initial_y - row);
   }
@@ -111,10 +114,10 @@ void I::set_tiles_shape()
       return;
   }
 
-  for (int i = 0; i < (size ^ 2); i++)
+  for (int i = 0; i < area; i++)
   {
-    int row = i / size;
-    int col = i % size;
+    int row = i / width;
+    int col = i % height;
 
     tiles[row][col].set_state(shape[i]);
   }

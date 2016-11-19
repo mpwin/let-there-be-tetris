@@ -32,6 +32,8 @@ void Board::draw()
       tiles[i][j].draw();
     }
   }
+
+  tetromino->draw();
 }
 
 void Board::instantiate_tetromino()

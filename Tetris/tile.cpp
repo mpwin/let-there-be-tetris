@@ -2,7 +2,7 @@
 
 Tile::Tile()
 {
-  state = rand() % 2;
+  state = 0;
 }
 
 void Tile::draw()

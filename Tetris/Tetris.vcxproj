@@ -123,6 +123,7 @@
     <ClCompile Include="i.cpp" />
     <ClCompile Include="o.cpp" />
     <ClCompile Include="t.cpp" />
+    <ClCompile Include="tetromino.cpp" />
     <ClCompile Include="tile.cpp" />
     <ClCompile Include="z.cpp" />
   </ItemGroup>

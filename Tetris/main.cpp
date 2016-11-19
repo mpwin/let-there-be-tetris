@@ -1,3 +1,6 @@
+#include <cstdlib>
+#include <ctime>
+
 #include <glew.h>
 #include <SDL.h>
 
@@ -25,7 +28,10 @@ int main(int argc, char ** argv)
   glLoadIdentity();
   glOrtho(-2.0f, 24.0f, -2.0f, 22.0f, 0.0f, 1.0f);
 
+  srand(time(NULL));
+
   Board board;
+  board.instantiate_tetromino();
 
   bool running = true;
   while (running)
