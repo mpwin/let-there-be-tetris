@@ -89,11 +89,20 @@ void O::set_tiles_shape()
 
   switch (state)
   {
-    case 1  : shape = shape_1;
-    case 2  : shape = shape_2;
-    case 3  : shape = shape_3;
-    case 4  : shape = shape_4;
-    default : return;
+    case 1:
+      shape = shape_1;
+      break;
+    case 2:
+      shape = shape_2;
+      break;
+    case 3:
+      shape = shape_3;
+      break;
+    case 4:
+      shape = shape_4;
+      break;
+    default:
+      return;
   }
 
   for (int i = 0; i < (size ^ 2); i++)

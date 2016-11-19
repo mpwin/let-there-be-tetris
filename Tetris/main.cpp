@@ -35,13 +35,19 @@ int main(int argc, char ** argv)
     {
       switch (event.type)
       {
-        case SDL_KEYDOWN:
+        case SDL_KEYDOWN: {
           switch (event.key.keysym.sym)
           {
             case SDLK_ESCAPE:
               running = false;
               break;
+            default:
+              break;
           }
+          break;
+        }
+        default:
+          break;
       }
     }
 
