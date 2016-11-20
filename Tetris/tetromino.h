@@ -10,6 +10,7 @@ class Tetromino
 {
 public:
   void draw();
+  void instantiate_tiles();
   void move_down();
   void move_left();
   void move_right();
@@ -30,7 +31,6 @@ public:
   I(int board_width, int board_height);
 
 private:
-  void instantiate_tiles();
   void set_shape_1();
   void set_shape_2();
   void set_shape_3();
@@ -43,7 +43,6 @@ public:
   L(int board_width, int board_height);
 
 private:
-  void instantiate_tiles();
   void set_shape_1();
   void set_shape_2();
   void set_shape_3();
@@ -56,7 +55,6 @@ public:
   O(int board_width, int board_height);
 
 private:
-  void instantiate_tiles();
   void set_shape_1();
   void set_shape_2();
   void set_shape_3();
@@ -69,7 +67,6 @@ public:
   T(int board_width, int board_height);
 
 private:
-  void instantiate_tiles();
   void set_shape_1();
   void set_shape_2();
   void set_shape_3();
@@ -82,7 +79,6 @@ public:
   Z(int board_width, int board_height);
 
 private:
-  void instantiate_tiles();
   void set_shape_1();
   void set_shape_2();
   void set_shape_3();

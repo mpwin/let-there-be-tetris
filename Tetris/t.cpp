@@ -18,14 +18,6 @@ T::T(int board_width, int board_height)
   set_tiles_initial_position(board_width, board_height);
 }
 
-void T::instantiate_tiles()
-{
-  tiles = new Tile*[width];
-  for (int i = 0; i < width; i++) {
-    tiles[i] = new Tile[height];
-  }
-}
-
 void T::set_shape_1()
 {
   int shape[] = { 0, 0, 0,

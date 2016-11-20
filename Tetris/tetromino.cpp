@@ -9,6 +9,14 @@ void Tetromino::draw()
   }
 }
 
+void Tetromino::instantiate_tiles()
+{
+  tiles = new Tile*[width];
+  for (int i = 0; i < width; i++) {
+    tiles[i] = new Tile[height];
+  }
+}
+
 void Tetromino::move_down()
 {
   for (int i = 0; i < width; i++) {
