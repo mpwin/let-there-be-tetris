@@ -83,34 +83,3 @@ void O::set_tiles_initial_position(int board_width, int board_height)
     tiles[row][col].set_position(initial_x + col, initial_y - row);
   }
 }
-
-void O::set_tiles_shape()
-{
-  int *shape;
-
-  switch (state)
-  {
-    case 1:
-      shape = shape_1;
-      break;
-    case 2:
-      shape = shape_2;
-      break;
-    case 3:
-      shape = shape_3;
-      break;
-    case 4:
-      shape = shape_4;
-      break;
-    default:
-      return;
-  }
-
-  for (int i = 0; i < area; i++)
-  {
-    int row = i / width;
-    int col = i % height;
-
-    tiles[row][col].set_state(shape[i]);
-  }
-}

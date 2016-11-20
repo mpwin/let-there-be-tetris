@@ -13,6 +13,7 @@ public:
   void move_down();
   void move_left();
   void move_right();
+  void set_tiles_shape();
 
 protected:
   int width, height, area;
@@ -34,7 +35,6 @@ private:
   void set_shape_3();
   void set_shape_4();
   void set_tiles_initial_position(int board_width, int board_height);
-  void set_tiles_shape();
 };
 
 class L : public Tetromino
@@ -49,7 +49,6 @@ private:
   void set_shape_3();
   void set_shape_4();
   void set_tiles_initial_position(int board_width, int board_height);
-  void set_tiles_shape();
 };
 
 class O : public Tetromino
@@ -64,7 +63,6 @@ private:
   void set_shape_3();
   void set_shape_4();
   void set_tiles_initial_position(int board_width, int board_height);
-  void set_tiles_shape();
 };
 
 class T : public Tetromino
@@ -79,7 +77,6 @@ private:
   void set_shape_3();
   void set_shape_4();
   void set_tiles_initial_position(int board_width, int board_height);
-  void set_tiles_shape();
 };
 
 class Z : public Tetromino
@@ -94,7 +91,6 @@ private:
   void set_shape_3();
   void set_shape_4();
   void set_tiles_initial_position(int board_width, int board_height);
-  void set_tiles_shape();
 };
 
 #endif

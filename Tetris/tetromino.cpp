@@ -35,3 +35,34 @@ void Tetromino::move_right()
     }
   }
 }
+
+void Tetromino::set_tiles_shape()
+{
+  int *shape;
+
+  switch (state)
+  {
+  case 1:
+    shape = shape_1;
+    break;
+  case 2:
+    shape = shape_2;
+    break;
+  case 3:
+    shape = shape_3;
+    break;
+  case 4:
+    shape = shape_4;
+    break;
+  default:
+    return;
+  }
+
+  for (int i = 0; i < area; i++)
+  {
+    int row = i / width;
+    int col = i % height;
+
+    tiles[row][col].set_state(shape[i]);
+  }
+}
