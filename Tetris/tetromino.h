@@ -14,6 +14,7 @@ public:
   void move_down();
   void move_left();
   void move_right();
+  void rotate();
   void set_tiles_initial_position(int board_width, int board_height);
   void set_tiles_shape();
 

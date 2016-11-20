@@ -56,6 +56,9 @@ int main(int argc, char ** argv)
             case SDLK_RIGHT:
               board.move_tetromino_right();
               break;
+            case SDLK_UP:
+              board.rotate_tetromino();
+              break;
             default:
               break;
           }

@@ -44,6 +44,16 @@ void Tetromino::move_right()
   }
 }
 
+void Tetromino::rotate()
+{
+  if (state == 4)
+    state = 1;
+  else
+    state++;
+
+  set_tiles_shape();
+}
+
 void Tetromino::set_tiles_initial_position(int board_width, int board_height)
 {
   int initial_x = (board_width / 2) - (width / 2);

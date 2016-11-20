@@ -73,3 +73,8 @@ void Board::move_tetromino_right()
 {
   tetromino->move_right();
 }
+
+void Board::rotate_tetromino()
+{
+  tetromino->rotate();
+}

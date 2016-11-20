@@ -16,6 +16,7 @@ public:
   void move_tetromino_down();
   void move_tetromino_left();
   void move_tetromino_right();
+  void rotate_tetromino();
 
 private:
   int width, height;
