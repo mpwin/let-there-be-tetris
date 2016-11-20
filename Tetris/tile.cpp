@@ -19,6 +19,21 @@ void Tile::draw()
   }
 }
 
+void Tile::move_down()
+{
+  y--;
+}
+
+void Tile::move_left()
+{
+  x--;
+}
+
+void Tile::move_right()
+{
+  x++;
+}
+
 void Tile::set_position(int xc, int yc)
 {
   x = xc;

@@ -44,8 +44,17 @@ int main(int argc, char ** argv)
         case SDL_KEYDOWN: {
           switch (event.key.keysym.sym)
           {
+            case SDLK_DOWN:
+              board.move_tetromino_down();
+              break;
             case SDLK_ESCAPE:
               running = false;
+              break;
+            case SDLK_LEFT:
+              board.move_tetromino_left();
+              break;
+            case SDLK_RIGHT:
+              board.move_tetromino_right();
               break;
             default:
               break;
@@ -57,6 +66,7 @@ int main(int argc, char ** argv)
       }
     }
 
+    glClear(GL_COLOR_BUFFER_BIT);
     board.draw();
     SDL_GL_SwapWindow(window);
   }

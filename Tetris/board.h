@@ -13,6 +13,9 @@ public:
   Board();
   void draw();
   void instantiate_tetromino();
+  void move_tetromino_down();
+  void move_tetromino_left();
+  void move_tetromino_right();
 
 private:
   int width, height;
