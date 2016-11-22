@@ -20,12 +20,12 @@ public:
   void set_tiles_initial_position(int board_width, int board_height);
   void set_tiles_shape();
 
+  Tile **tiles;
+
 protected:
   int width, height, area;
   int state;
   int *shape_1, *shape_2, *shape_3, *shape_4;
-
-  Tile **tiles;
 };
 
 class I : public Tetromino
