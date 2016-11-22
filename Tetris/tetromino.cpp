@@ -9,6 +9,16 @@ void Tetromino::draw()
   }
 }
 
+int Tetromino::get_height()
+{
+  return height;
+}
+
+int Tetromino::get_width()
+{
+  return width;
+}
+
 void Tetromino::instantiate_tiles()
 {
   tiles = new Tile*[width];

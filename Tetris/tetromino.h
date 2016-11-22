@@ -10,6 +10,8 @@ class Tetromino
 {
 public:
   void draw();
+  int  get_height();
+  int  get_width();
   void instantiate_tiles();
   void move_down();
   void move_left();
