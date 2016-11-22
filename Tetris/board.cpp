@@ -115,13 +115,24 @@ bool Board::tetromino_can_move_down()
   {
     for (int col = 0; col < tetromino->get_height(); col++)
     {
-      int tetromino_tile_state = tetromino->tiles[row][col].get_state();
-      if (tetromino_tile_state == 1)
+      int tile_state = tetromino->tiles[row][col].get_state();
+      if (tile_state == 1)
       {
-        int tetromino_tile_position_y = tetromino->tiles[row][col].get_position_y();
-        if (tetromino_tile_position_y - 1 < 0)
+        int tile_pos_x = tetromino->tiles[row][col].get_position_x();
+        int tile_pos_y = tetromino->tiles[row][col].get_position_y();
+
+        bool bottommost = tile_pos_y - 1 < 0;
+        if (bottommost)
         {
           return false;
+        }
+        else
+        {
+          bool colliding = tiles[tile_pos_x][tile_pos_y - 1].get_state() == 1;
+          if (colliding)
+          {
+            return false;
+          }
         }
       }
     }
@@ -136,13 +147,24 @@ bool Board::tetromino_can_move_left()
   {
     for (int col = 0; col < tetromino->get_height(); col++)
     {
-      int tetromino_tile_state = tetromino->tiles[row][col].get_state();
-      if (tetromino_tile_state == 1)
+      int tile_state = tetromino->tiles[row][col].get_state();
+      if (tile_state == 1)
       {
-        int tetromino_tile_position_x = tetromino->tiles[row][col].get_position_x();
-        if (tetromino_tile_position_x - 1 < 0)
+        int tile_pos_x = tetromino->tiles[row][col].get_position_x();
+        int tile_pos_y = tetromino->tiles[row][col].get_position_y();
+
+        bool leftmost = tile_pos_x - 1 < 0;
+        if (leftmost)
         {
           return false;
+        }
+        else
+        {
+          bool colliding = tiles[tile_pos_x - 1][tile_pos_y].get_state() == 1;
+          if (colliding)
+          {
+            return false;
+          }
         }
       }
     }
@@ -157,13 +179,24 @@ bool Board::tetromino_can_move_right()
   {
     for (int col = 0; col < tetromino->get_height(); col++)
     {
-      int tetromino_tile_state = tetromino->tiles[row][col].get_state();
-      if (tetromino_tile_state == 1)
+      int tile_state = tetromino->tiles[row][col].get_state();
+      if (tile_state == 1)
       {
-        int tetromino_tile_position_x = tetromino->tiles[row][col].get_position_x();
-        if (tetromino_tile_position_x + 1 > width - 1)
+        int tile_pos_x = tetromino->tiles[row][col].get_position_x();
+        int tile_pos_y = tetromino->tiles[row][col].get_position_y();
+
+        bool rightmost = tile_pos_x + 1 > width - 1;
+        if (rightmost)
         {
           return false;
+        }
+        else
+        {
+          bool colliding = tiles[tile_pos_x + 1][tile_pos_y].get_state() == 1;
+          if (colliding)
+          {
+            return false;
+          }
         }
       }
     }
