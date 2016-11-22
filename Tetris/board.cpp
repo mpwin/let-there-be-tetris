@@ -61,20 +61,89 @@ void Board::instantiate_tetromino()
 }
 void Board::process_tetromino_down()
 {
-  tetromino->move_down();
+  if (tetromino_can_move_down()) {
+    tetromino->move_down();
+  }
 }
 
 void Board::process_tetromino_left()
 {
-  tetromino->move_left();
+  if (tetromino_can_move_left()) {
+    tetromino->move_left();
+  }
 }
 
 void Board::process_tetromino_right()
 {
-  tetromino->move_right();
+  if (tetromino_can_move_right()) {
+    tetromino->move_right();
+  }
 }
 
 void Board::process_tetromino_rotate()
 {
   tetromino->rotate();
+}
+
+bool Board::tetromino_can_move_down()
+{
+  for (int row = 0; row < tetromino->get_width(); row++)
+  {
+    for (int col = 0; col < tetromino->get_height(); col++)
+    {
+      int tetromino_tile_state = tetromino->tiles[row][col].get_state();
+      if (tetromino_tile_state == 1)
+      {
+        int tetromino_tile_position_y = tetromino->tiles[row][col].get_position_y();
+        if (tetromino_tile_position_y - 1 < 0)
+        {
+          return false;
+        }
+      }
+    }
+  }
+
+  return true;
+}
+
+bool Board::tetromino_can_move_left()
+{
+  for (int row = 0; row < tetromino->get_width(); row++)
+  {
+    for (int col = 0; col < tetromino->get_height(); col++)
+    {
+      int tetromino_tile_state = tetromino->tiles[row][col].get_state();
+      if (tetromino_tile_state == 1)
+      {
+        int tetromino_tile_position_x = tetromino->tiles[row][col].get_position_x();
+        if (tetromino_tile_position_x - 1 < 0)
+        {
+          return false;
+        }
+      }
+    }
+  }
+
+  return true;
+}
+
+bool Board::tetromino_can_move_right()
+{
+  for (int row = 0; row < tetromino->get_width(); row++)
+  {
+    for (int col = 0; col < tetromino->get_height(); col++)
+    {
+      int tetromino_tile_state = tetromino->tiles[row][col].get_state();
+      if (tetromino_tile_state == 1)
+      {
+        int tetromino_tile_position_x = tetromino->tiles[row][col].get_position_x();
+        if (tetromino_tile_position_x + 1 > width - 1)
+        {
+          return false;
+        }
+      }
+    }
+  }
+
+  return true;
 }
