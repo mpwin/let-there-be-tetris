@@ -8,6 +8,8 @@ class Tile
 public:
   Tile();
   void draw();
+  int  get_position_x();
+  int  get_position_y();
   int  get_state();
   void move_down();
   void move_left();

@@ -19,6 +19,16 @@ void Tile::draw()
   }
 }
 
+int Tile::get_position_x()
+{
+  return x;
+}
+
+int Tile::get_position_y()
+{
+  return y;
+}
+
 int Tile::get_state()
 {
   return state;
