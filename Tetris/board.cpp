@@ -66,13 +66,13 @@ void Board::lock_tetromino()
   {
     for (int col = 0; col < tetromino->get_height(); col++)
     {
-      int tetromino_tile_state = tetromino->tiles[row][col].get_state();
-      if (tetromino_tile_state == 1)
+      int tile_state = tetromino->tiles[row][col].get_state();
+      if (tile_state == 1)
       {
-        int tetromino_tile_position_x = tetromino->tiles[row][col].get_position_x();
-        int tetromino_tile_position_y = tetromino->tiles[row][col].get_position_y();
+        int tile_pos_x = tetromino->tiles[row][col].get_position_x();
+        int tile_pos_y = tetromino->tiles[row][col].get_position_y();
 
-        tiles[tetromino_tile_position_x][tetromino_tile_position_y].set_state(tetromino_tile_state);
+        tiles[tile_pos_x][tile_pos_y].set_state(tile_state);
       }
     }
   }
