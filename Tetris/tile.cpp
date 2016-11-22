@@ -19,6 +19,11 @@ void Tile::draw()
   }
 }
 
+int Tile::get_state()
+{
+  return state;
+}
+
 void Tile::move_down()
 {
   y--;
