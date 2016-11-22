@@ -45,19 +45,19 @@ int main(int argc, char ** argv)
           switch (event.key.keysym.sym)
           {
             case SDLK_DOWN:
-              board.move_tetromino_down();
+              board.process_tetromino_down();
               break;
             case SDLK_ESCAPE:
               running = false;
               break;
             case SDLK_LEFT:
-              board.move_tetromino_left();
+              board.process_tetromino_left();
               break;
             case SDLK_RIGHT:
-              board.move_tetromino_right();
+              board.process_tetromino_right();
               break;
             case SDLK_UP:
-              board.rotate_tetromino();
+              board.process_tetromino_rotate();
               break;
             default:
               break;

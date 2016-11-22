@@ -59,22 +59,22 @@ void Board::instantiate_tetromino()
       return;
   }
 }
-void Board::move_tetromino_down()
+void Board::process_tetromino_down()
 {
   tetromino->move_down();
 }
 
-void Board::move_tetromino_left()
+void Board::process_tetromino_left()
 {
   tetromino->move_left();
 }
 
-void Board::move_tetromino_right()
+void Board::process_tetromino_right()
 {
   tetromino->move_right();
 }
 
-void Board::rotate_tetromino()
+void Board::process_tetromino_rotate()
 {
   tetromino->rotate();
 }

@@ -13,10 +13,10 @@ public:
   Board();
   void draw();
   void instantiate_tetromino();
-  void move_tetromino_down();
-  void move_tetromino_left();
-  void move_tetromino_right();
-  void rotate_tetromino();
+  void process_tetromino_down();
+  void process_tetromino_left();
+  void process_tetromino_right();
+  void process_tetromino_rotate();
 
 private:
   int width, height;
