@@ -59,6 +59,7 @@ void Board::instantiate_tetromino()
       return;
   }
 }
+
 void Board::process_tetromino_down()
 {
   if (tetromino_can_move_down()) {
