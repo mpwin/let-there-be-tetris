@@ -60,10 +60,33 @@ void Board::instantiate_tetromino()
   }
 }
 
+void Board::lock_tetromino()
+{
+  for (int row = 0; row < tetromino->get_width(); row++)
+  {
+    for (int col = 0; col < tetromino->get_height(); col++)
+    {
+      int tetromino_tile_state = tetromino->tiles[row][col].get_state();
+      if (tetromino_tile_state == 1)
+      {
+        int tetromino_tile_position_x = tetromino->tiles[row][col].get_position_x();
+        int tetromino_tile_position_y = tetromino->tiles[row][col].get_position_y();
+
+        tiles[tetromino_tile_position_x][tetromino_tile_position_y].set_state(tetromino_tile_state);
+      }
+    }
+  }
+}
+
 void Board::process_tetromino_down()
 {
   if (tetromino_can_move_down()) {
     tetromino->move_down();
+  }
+  else {
+    lock_tetromino();
+    delete tetromino;
+    instantiate_tetromino();
   }
 }
 

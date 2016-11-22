@@ -13,6 +13,7 @@ public:
   Board();
   void draw();
   void instantiate_tetromino();
+  void lock_tetromino();
   void process_tetromino_down();
   void process_tetromino_left();
   void process_tetromino_right();
