@@ -19,8 +19,8 @@ Board::Board()
 
 void Board::draw()
 {
-  glBegin(GL_LINE_LOOP);
-    glColor3f(1.0f, 1.0f, 1.0f);
+  glBegin(GL_QUADS);
+    glColor3f(0.05f, 0.25f, 0.05f);
     glVertex2f(0.0f, 0.0f);
     glVertex2f(0.0f, height);
     glVertex2f(width, height);
