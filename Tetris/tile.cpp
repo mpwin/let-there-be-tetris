@@ -10,7 +10,17 @@ void Tile::draw()
   if (state == 1)
   {
     glBegin(GL_QUADS);
-      glColor3f(0.0f, 1.0f, 1.0f);
+      glColor3f(0.02f, 0.61f, 0.04f);
+      glVertex2f(x, y);
+      glVertex2f(x, y + 1);
+      glVertex2f(x + 1, y + 1);
+      glVertex2f(x + 1, y);
+    glEnd();
+  }
+  else
+  {
+    glBegin(GL_QUADS);
+      glColor3f(0.94f, 0.88f, 0.25f);
       glVertex2f(x, y);
       glVertex2f(x, y + 1);
       glVertex2f(x + 1, y + 1);
