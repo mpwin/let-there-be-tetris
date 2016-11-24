@@ -33,7 +33,7 @@ int main(int argc, char ** argv)
   Board board;
   board.instantiate_tetromino();
 
-  // int current_time, last_time = 0;
+  int current_time, last_time = 0;
 
   bool running = true;
   while (running)
@@ -71,12 +71,12 @@ int main(int argc, char ** argv)
       }
     }
 
-    // current_time = SDL_GetTicks();
-    // if (current_time > last_time + 750)
-    // {
-    //   board.process_tetromino_down();
-    //   last_time = current_time;
-    // }
+    current_time = SDL_GetTicks();
+    if (current_time > last_time + 750)
+    {
+      board.process_tetromino_down();
+      last_time = current_time;
+    }
 
     glClear(GL_COLOR_BUFFER_BIT);
     board.draw();
