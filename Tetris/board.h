@@ -11,6 +11,8 @@ class Board
 {
 public:
   Board();
+  void clear_full_rows();
+  void clear_row(int row);
   void draw();
   void instantiate_tetromino();
   void lock_tetromino();
@@ -24,6 +26,7 @@ public:
 
 private:
   int width, height;
+  int rows, cols;
 
   Tetromino *tetromino;
   Tile      **tiles;

@@ -5,6 +5,9 @@ Board::Board()
   width  = 10;
   height = 20;
 
+  rows = height;
+  cols = width;
+
   tiles = new Tile*[width];
   for (int i = 0; i < width; i++) {
     tiles[i] = new Tile[height];
@@ -13,6 +16,51 @@ Board::Board()
   for (int i = 0; i < width; i++) {
     for (int j = 0; j < height; j++) {
       tiles[i][j].set_position(i, j);
+    }
+  }
+}
+
+void Board::clear_full_rows()
+{
+  for (int row = 0; row < rows; row++)
+  {
+    for (int col = 0; col < cols; col++)
+    {
+      bool last_col  = (col + 1 == cols);
+      bool tile_full = tiles[col][row].get_state() == 1;
+
+      if (last_col && tile_full)
+      {
+        clear_row(row);
+        row--;
+      }
+      else if (tile_full)
+      {
+        continue;
+      }
+      else {
+        break;
+      }
+    }
+  }
+}
+
+void Board::clear_row(int row)
+{
+  for (int y = row; y < height; y++)
+  {
+    for (int x = 0; x < width; x++)
+    {
+      bool last_row = (y + 1 == height);
+
+      if (last_row)
+      {
+        tiles[x][y].set_state(0);
+      }
+      else
+      {
+        tiles[x][y].set_state(tiles[x][y + 1].get_state());
+      }
     }
   }
 }
@@ -86,6 +134,7 @@ void Board::process_tetromino_down()
   else {
     lock_tetromino();
     delete tetromino;
+    clear_full_rows();
     instantiate_tetromino();
   }
 }
