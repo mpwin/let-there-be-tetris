@@ -62,15 +62,15 @@ void Board::instantiate_tetromino()
 
 void Board::lock_tetromino()
 {
-  for (int row = 0; row < tetromino->get_width(); row++)
+  for (int x = 0; x < tetromino->get_width(); x++)
   {
-    for (int col = 0; col < tetromino->get_height(); col++)
+    for (int y = 0; y < tetromino->get_height(); y++)
     {
-      int tile_state = tetromino->tiles[row][col].get_state();
+      int tile_state = tetromino->tiles[x][y].get_state();
       if (tile_state == 1)
       {
-        int tile_pos_x = tetromino->tiles[row][col].get_position_x();
-        int tile_pos_y = tetromino->tiles[row][col].get_position_y();
+        int tile_pos_x = tetromino->tiles[x][y].get_position_x();
+        int tile_pos_y = tetromino->tiles[x][y].get_position_y();
 
         tiles[tile_pos_x][tile_pos_y].set_state(tile_state);
       }
@@ -111,15 +111,15 @@ void Board::process_tetromino_rotate()
 
 bool Board::tetromino_can_move_down()
 {
-  for (int row = 0; row < tetromino->get_width(); row++)
+  for (int x = 0; x < tetromino->get_width(); x++)
   {
-    for (int col = 0; col < tetromino->get_height(); col++)
+    for (int y = 0; y < tetromino->get_height(); y++)
     {
-      int tile_state = tetromino->tiles[row][col].get_state();
+      int tile_state = tetromino->tiles[x][y].get_state();
       if (tile_state == 1)
       {
-        int tile_pos_x = tetromino->tiles[row][col].get_position_x();
-        int tile_pos_y = tetromino->tiles[row][col].get_position_y();
+        int tile_pos_x = tetromino->tiles[x][y].get_position_x();
+        int tile_pos_y = tetromino->tiles[x][y].get_position_y();
 
         bool bottommost = tile_pos_y - 1 < 0;
         if (bottommost)
@@ -143,15 +143,15 @@ bool Board::tetromino_can_move_down()
 
 bool Board::tetromino_can_move_left()
 {
-  for (int row = 0; row < tetromino->get_width(); row++)
+  for (int x = 0; x < tetromino->get_width(); x++)
   {
-    for (int col = 0; col < tetromino->get_height(); col++)
+    for (int y = 0; y < tetromino->get_height(); y++)
     {
-      int tile_state = tetromino->tiles[row][col].get_state();
+      int tile_state = tetromino->tiles[x][y].get_state();
       if (tile_state == 1)
       {
-        int tile_pos_x = tetromino->tiles[row][col].get_position_x();
-        int tile_pos_y = tetromino->tiles[row][col].get_position_y();
+        int tile_pos_x = tetromino->tiles[x][y].get_position_x();
+        int tile_pos_y = tetromino->tiles[x][y].get_position_y();
 
         bool leftmost = tile_pos_x - 1 < 0;
         if (leftmost)
@@ -175,15 +175,15 @@ bool Board::tetromino_can_move_left()
 
 bool Board::tetromino_can_move_right()
 {
-  for (int row = 0; row < tetromino->get_width(); row++)
+  for (int x = 0; x < tetromino->get_width(); x++)
   {
-    for (int col = 0; col < tetromino->get_height(); col++)
+    for (int y = 0; y < tetromino->get_height(); y++)
     {
-      int tile_state = tetromino->tiles[row][col].get_state();
+      int tile_state = tetromino->tiles[x][y].get_state();
       if (tile_state == 1)
       {
-        int tile_pos_x = tetromino->tiles[row][col].get_position_x();
-        int tile_pos_y = tetromino->tiles[row][col].get_position_y();
+        int tile_pos_x = tetromino->tiles[x][y].get_position_x();
+        int tile_pos_y = tetromino->tiles[x][y].get_position_y();
 
         bool rightmost = tile_pos_x + 1 > width - 1;
         if (rightmost)
