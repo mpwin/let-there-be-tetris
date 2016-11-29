@@ -2,11 +2,11 @@
 
 I::I(int board_width, int board_height)
 {
-  width  = 4;
-  height = 4;
-  area   = width * height;
+  this->width  = 4;
+  this->height = 4;
+  this->area   = width * height;
 
-  state = rand() % 4 + 1;
+  this->state = rand() % 4 + 1;
 
   set_shape_1();
   set_shape_2();

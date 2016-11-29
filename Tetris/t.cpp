@@ -2,11 +2,11 @@
 
 T::T(int board_width, int board_height)
 {
-  width  = 3;
-  height = 3;
-  area   = width * height;
+  this->width  = 3;
+  this->height = 3;
+  this->area   = width * height;
 
-  state = rand() % 4 + 1;
+  this->state = rand() % 4 + 1;
 
   set_shape_1();
   set_shape_2();

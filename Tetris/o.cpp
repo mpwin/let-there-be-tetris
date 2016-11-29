@@ -2,11 +2,11 @@
 
 O::O(int board_width, int board_height)
 {
-  width  = 2;
-  height = 2;
-  area   = width * height;
+  this->width  = 2;
+  this->height = 2;
+  this->area   = width * height;
 
-  state = rand() % 4 + 1;
+  this->state = rand() % 4 + 1;
 
   set_shape_1();
   set_shape_2();
