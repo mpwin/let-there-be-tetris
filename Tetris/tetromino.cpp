@@ -66,7 +66,7 @@ void Tetromino::rotate()
 
 void Tetromino::set_tiles_initial_position(int board_width, int board_height)
 {
-  int initial_x = (board_width / 2) - (width / 2);
+  int initial_x = (board_width / 2) - (width / 2) - (width % 2);
   int initial_y = board_height - 1;
 
   for (int i = 0; i < area; i++)
