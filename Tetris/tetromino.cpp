@@ -2,9 +2,9 @@
 
 void Tetromino::draw()
 {
-  for (int i = 0; i < width; i++) {
-    for (int j = 0; j < height; j++) {
-      tiles[i][j].draw();
+  for (int x = 0; x < width; x++) {
+    for (int y = 0; y < height; y++) {
+      tiles[x][y].draw();
     }
   }
 }
@@ -21,35 +21,35 @@ int Tetromino::get_width()
 
 void Tetromino::instantiate_tiles()
 {
-  tiles = new Tile*[width];
+  this->tiles = new Tile*[width];
   for (int i = 0; i < width; i++) {
-    tiles[i] = new Tile[height];
+    this->tiles[i] = new Tile[height];
   }
 }
 
 void Tetromino::move_down()
 {
-  for (int i = 0; i < width; i++) {
-    for (int j = 0; j < height; j++) {
-      tiles[i][j].move_down();
+  for (int x = 0; x < width; x++) {
+    for (int y = 0; y < height; y++) {
+      tiles[x][y].move_down();
     }
   }
 }
 
 void Tetromino::move_left()
 {
-  for (int i = 0; i < width; i++) {
-    for (int j = 0; j < height; j++) {
-      tiles[i][j].move_left();
+  for (int x = 0; x < width; x++) {
+    for (int y = 0; y < height; y++) {
+      tiles[x][y].move_left();
     }
   }
 }
 
 void Tetromino::move_right()
 {
-  for (int i = 0; i < width; i++) {
-    for (int j = 0; j < height; j++) {
-      tiles[i][j].move_right();
+  for (int x = 0; x < width; x++) {
+    for (int y = 0; y < height; y++) {
+      tiles[x][y].move_right();
     }
   }
 }
@@ -57,9 +57,9 @@ void Tetromino::move_right()
 void Tetromino::rotate()
 {
   if (state == 4)
-    state = 1;
+    this->state = 1;
   else
-    state++;
+    this->state++;
 
   set_tiles_shape();
 }
