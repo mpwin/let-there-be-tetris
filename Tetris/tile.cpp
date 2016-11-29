@@ -59,10 +59,10 @@ void Tile::move_right()
   x++;
 }
 
-void Tile::set_position(int xc, int yc)
+void Tile::set_position(int x, int y)
 {
-  x = xc;
-  y = yc;
+  this->x = x;
+  this->y = y;
 }
 
 void Tile::set_state(int s)
