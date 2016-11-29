@@ -2,20 +2,20 @@
 
 Board::Board()
 {
-  width  = 10;
-  height = 20;
+  this->width  = 10;
+  this->height = 20;
 
-  rows = height;
-  cols = width;
+  this->rows = height;
+  this->cols = width;
 
-  tiles = new Tile*[width];
+  this->tiles = new Tile*[width];
   for (int i = 0; i < width; i++) {
-    tiles[i] = new Tile[height];
+    this->tiles[i] = new Tile[height];
   }
 
-  for (int i = 0; i < width; i++) {
-    for (int j = 0; j < height; j++) {
-      tiles[i][j].set_position(i, j);
+  for (int x = 0; x < width; x++) {
+    for (int y = 0; y < height; y++) {
+      tiles[x][y].set_position(x, y);
     }
   }
 }
