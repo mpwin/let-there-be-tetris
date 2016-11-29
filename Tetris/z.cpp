@@ -24,9 +24,9 @@ void Z::set_shape_1()
                   0, 1, 1,
                   0, 0, 0 };
 
-  shape_1 = new int[area];
+  this->shape_1 = new int[area];
   for (int i = 0; i < area; i++) {
-    shape_1[i] = shape[i];
+    this->shape_1[i] = shape[i];
   }
 }
 
@@ -36,9 +36,9 @@ void Z::set_shape_2()
                   0, 1, 1,
                   0, 1, 0 };
 
-  shape_2 = new int[area];
+  this->shape_2 = new int[area];
   for (int i = 0; i < area; i++) {
-    shape_2[i] = shape[i];
+    this->shape_2[i] = shape[i];
   }
 }
 
@@ -48,9 +48,9 @@ void Z::set_shape_3()
                   1, 1, 0,
                   0, 1, 1 };
 
-  shape_3 = new int[area];
+  this->shape_3 = new int[area];
   for (int i = 0; i < area; i++) {
-    shape_3[i] = shape[i];
+    this->shape_3[i] = shape[i];
   }
 }
 
@@ -60,8 +60,8 @@ void Z::set_shape_4()
                   1, 1, 0,
                   1, 0, 0 };
 
-  shape_4 = new int[area];
+  this->shape_4 = new int[area];
   for (int i = 0; i < area; i++) {
-    shape_4[i] = shape[i];
+    this->shape_4[i] = shape[i];
   }
 }
