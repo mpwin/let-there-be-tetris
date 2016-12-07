@@ -24,6 +24,7 @@ public:
 
 protected:
   int width, height, area;
+  int current_shape;
   int state;
   int *shape_1, *shape_2, *shape_3, *shape_4;
 };
