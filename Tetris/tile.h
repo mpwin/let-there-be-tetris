@@ -1,7 +1,7 @@
 #ifndef TILE_H
 #define TILE_H
 
-#include <glew.h>
+#include <GL/glew.h>
 
 class Tile
 {

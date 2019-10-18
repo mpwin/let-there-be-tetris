@@ -2,7 +2,7 @@
 #define BOARD_H
 
 #include <cstdlib>
-#include <glew.h>
+#include <GL/glew.h>
 
 #include "tetromino.h"
 #include "tile.h"

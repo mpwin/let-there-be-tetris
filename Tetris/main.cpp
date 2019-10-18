@@ -1,7 +1,8 @@
 #include <cstdlib>
 #include <ctime>
 
-#include <glew.h>
+#include <GL/glew.h>
+#include <GL/freeglut.h>
 #include <SDL.h>
 
 #include "board.h"
