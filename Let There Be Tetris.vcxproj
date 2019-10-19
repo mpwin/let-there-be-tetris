@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{81FE7035-B54A-46E6-8A79-38519ED36130}</ProjectGuid>
-    <RootNamespace>Tetris</RootNamespace>
+    <RootNamespace>LetThereBeTetris</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
