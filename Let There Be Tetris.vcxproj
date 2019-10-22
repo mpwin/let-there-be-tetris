@@ -128,12 +128,14 @@
     <ClCompile Include="src\t.cpp" />
     <ClCompile Include="src\tetromino.cpp" />
     <ClCompile Include="src\tile.cpp" />
+    <ClCompile Include="src\window.cpp" />
     <ClCompile Include="src\z.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\board.h" />
     <ClInclude Include="src\tetromino.h" />
     <ClInclude Include="src\tile.h" />
+    <ClInclude Include="src\window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
