@@ -20,6 +20,8 @@ Board::Board()
             tiles[x][y].set_position(x, y);
         }
     }
+
+    srand(time(NULL));
 }
 
 void Board::clear_full_rows()
